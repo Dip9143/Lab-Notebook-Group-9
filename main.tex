@@ -4,7 +4,7 @@
 \usepackage{geometry}
 \usepackage{fancyhdr}
 \usepackage{enumitem}
-\usepackage{tocbibind} % To include "Table of Contents" in the index
+\usepackage{tocbibind} % To include "Table of Contents" in the table of contents
 \geometry{margin=1in}
 \pagestyle{fancy}
 \fancyhf{}
@@ -158,6 +158,7 @@
         \item If accepted, your changes will be merged into the main project.
     \end{itemize}
 \end{enumerate}
+
 \section{Lab Assignment 3: Git Branching, Merging, and Conflict Resolution}
 
 \textbf{Task:} Demonstrate proficiency in Git branching, merging, and conflict resolution in a step-by-step process.
@@ -183,9 +184,9 @@
     \begin{itemize}
         \item Create a file \texttt{shared.txt} and add the content:
         \begin{verbatim}
-        This is a shared file.
-        Line 1: Original text.
-        Line 2: Original text.
+This is a shared file.
+Line 1: Original text.
+Line 2: Original text.
         \end{verbatim}
         \item Stage and commit the changes: \texttt{git commit -m "Add shared.txt with original text"}
     \end{itemize}
@@ -204,68 +205,85 @@
     \begin{itemize}
         \item Modify the second line of \texttt{shared.txt}:
         \begin{verbatim}
-        Line 2: Modified text in feature-2.
+Line 2: Modified text in feature-2.
         \end{verbatim}
-        \item Commit and push: \texttt{git commit -m "Modify Line 2 in feature-2"}
+        \item Stage and commit the changes: \texttt{git add shared.txt}
+        \item Commit with a descriptive message: \texttt{git commit -m "Modify Line 2 in feature-2"}
+        \item Push the changes: \texttt{git push origin feature-2}
     \end{itemize}
 
     \item \textbf{Switch Back to feature-1 and Modify:}
     \begin{itemize}
-        \item Modify the second line on \texttt{feature-1}:
+        \item Switch back to \texttt{feature-1} using: \texttt{git checkout feature-1}
+        \item Modify the second line on \texttt{shared.txt}:
         \begin{verbatim}
-        Line 2: Modified text in feature-1.
+Line 2: Modified text in feature-1.
         \end{verbatim}
-        \item Commit and push: \texttt{git commit -m "Modify Line 2 in feature-1"}
+        \item Stage and commit the changes: \texttt{git add shared.txt}
+        \item Commit with a descriptive message: \texttt{git commit -m "Modify Line 2 in feature-1"}
+        \item Push the changes: \texttt{git push origin feature-1}
     \end{itemize}
 
     \item \textbf{Merge feature-1 into main:}
     \begin{itemize}
+        \item Switch to the \texttt{main} branch: \texttt{git checkout main}
         \item Merge the \texttt{feature-1} branch into the \texttt{main} branch: \texttt{git merge feature-1}
+        \item Push the merged changes: \texttt{git push origin main}
     \end{itemize}
 
     \item \textbf{Merge feature-2 and Handle Conflict:}
     \begin{itemize}
-        \item Merge \texttt{feature-2} into \texttt{main}, resolve conflicts manually, and stage the resolved file.
-    \end{itemize}
-
-    \item \textbf{Push the Final Merge:}
-    \begin{itemize}
-        \item Push the resolved main branch to GitHub.
+        \item Merge \texttt{feature-2} into \texttt{main}: \texttt{git merge feature-2}
+        \item Git will notify you of a merge conflict in \texttt{shared.txt}.
+        \item Open \texttt{shared.txt} in your text editor and resolve the conflict by choosing the appropriate changes or combining them.
+        \item After resolving, stage the resolved file: \texttt{git add shared.txt}
+        \item Commit the merge: \texttt{git commit -m "Merge feature-2 into main and resolve conflicts"}
+        \item Push the resolved main branch to GitHub: \texttt{git push origin main}
     \end{itemize}
 
     \item \textbf{Clean Up Branches:}
     \begin{itemize}
-        \item Delete both \texttt{feature-1} and \texttt{feature-2} branches locally and on GitHub.
+        \item Delete both \texttt{feature-1} and \texttt{feature-2} branches locally:
+        \begin{verbatim}
+git branch -d feature-1
+git branch -d feature-2
+        \end{verbatim}
+        \item Delete the branches on GitHub:
+        \begin{verbatim}
+git push origin --delete feature-1
+git push origin --delete feature-2
+        \end{verbatim}
     \end{itemize}
 \end{enumerate}
-\section{Lab Assignment 4: Create a CV Using Latex}
 
-\textbf{Task:}Create a CV using LaTex document.
+\section{Lab Assignment 4: Create a CV Using LaTeX}
 
-\subsection*{precedure}
+\textbf{Task:} Create a CV using a LaTeX document.
+
+\subsection*{Procedure}
 \begin{enumerate}[label=\arabic*.]
-    \item \textbf{Outline Your CV content:}
-    \begin{itemsize}
-        \item Include your name, Contact details, and a prefessional summary.
+    \item \textbf{Outline Your CV Content:}
+    \begin{itemize}
+        \item Include your name, contact details, and a professional summary.
         \item List academic qualifications, work experience, skills, projects, and certifications.
-    \end{itemsize}
+    \end{itemize}
 
-        \item \textbf{Decide on the structure and Lyout:}
-        \begin{itemize}
-            \item Organize the CV into sections such as Personal Information, Experience, Education, etc.
-        \end{itemsize}
+    \item \textbf{Decide on the Structure and Layout:}
+    \begin{itemize}
+        \item Organize the CV into sections such as Personal Information, Experience, Education, etc.
+    \end{itemize}
 
-        \item \textbf{choose a LaTex Template:}
-        \begin{itemsize}
-            \item Select a template that suits your style from Overleaf or a LaTex library.
-        \end{itemsize}
+    \item \textbf{Choose a LaTeX Template:}
+    \begin{itemize}
+        \item Select a template that suits your style from Overleaf or a LaTeX library.
+    \end{itemize}
 
-\item \textbf{Customize the Template:}
-\begin{itemsize}
-    \item Edit the template with your personal content (experience, qualification, etc.).
-    \end{itemsize}
+    \item \textbf{Customize the Template:}
+    \begin{itemize}
+        \item Edit the template with your personal content (experience, qualifications, etc.).
+    \end{itemize}
 
-\item \textbf{Adjust Formatting:}
+    \item \textbf{Adjust Formatting:}
     \begin{itemize}
         \item Ensure consistency in fonts and section headings.
     \end{itemize}
