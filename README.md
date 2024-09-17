@@ -7,7 +7,7 @@ This repository contains the LaTeX source code for the Lab Notebook created by T
 ## Repository Contents
 
 - `main.tex`: The LaTeX source file for the lab notebook.
-- `main.pdf`: The compiled PDF version of the lab notebook (generated from the LaTeX source).
+- `lab_notebook.pdf`: The compiled PDF version of the lab notebook (generated from the LaTeX source).
 - `README.md`: This file.
 
 ## Lab Notebook Sections
